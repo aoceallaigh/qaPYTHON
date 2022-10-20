@@ -4,13 +4,15 @@ import seaborn as sb
 import matplotlib.pyplot as plt 
 
 
-df = pd.read_csv("test.csv")
+df = pd.read_csv("iris.csv")
 print(df.head())
 print(df.describe())
 
-newplot = sb.scatterplot(
-    x = "Weight",
-    y = "Age",
-    data = df 
+sb.scatterplot(
+    x = "sepal.length",
+    y = "sepal.width",
+    data = df
 )
 plt.show()
+
+print(df.corr(df['sepal.length'],df['petal.length']))
